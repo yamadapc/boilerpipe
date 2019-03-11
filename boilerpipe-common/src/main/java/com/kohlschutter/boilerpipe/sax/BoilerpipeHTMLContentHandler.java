@@ -220,11 +220,7 @@ public class BoilerpipeHTMLContentHandler implements ContentHandler {
     }
 
     final int end = start + length;
-    for (int i = start; i < end; i++) {
-      if (Character.isWhitespace(ch[i])) {
-        ch[i] = ' ';
-      }
-    }
+
     while (start < end) {
       c = ch[start];
       if (c == ' ') {
@@ -235,6 +231,7 @@ public class BoilerpipeHTMLContentHandler implements ContentHandler {
         break;
       }
     }
+
     while (length > 0) {
       c = ch[start + length - 1];
       if (c == ' ') {
@@ -244,6 +241,7 @@ public class BoilerpipeHTMLContentHandler implements ContentHandler {
         break;
       }
     }
+
     if (length == 0) {
       if (startWhitespace || endWhitespace) {
         if (!sbLastWasWhitespace) {
@@ -351,7 +349,7 @@ public class BoilerpipeHTMLContentHandler implements ContentHandler {
     }
 
     TextBlock tb =
-        new TextBlock(textBuffer.toString().trim(), currentContainedTextElements, numWords,
+        new TextBlock(textBuffer.toString(), currentContainedTextElements, numWords,
             numLinkedWords, numWordsInWrappedLines, numWrappedLines, offsetBlocks);
     currentContainedTextElements = new BitSet();
 

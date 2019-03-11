@@ -67,11 +67,6 @@ public final class HTMLHighlighter {
   private HTMLHighlighter(final boolean extractHTML) {
     if (extractHTML) {
       setOutputHighlightOnly(true);
-      setExtraStyleSheet("\n<style type=\"text/css\">\n" + "A:before { content:' '; } \n" //
-          + "A:after { content:' '; } \n" //
-          + "SPAN:before { content:' '; } \n" //
-          + "SPAN:after { content:' '; } \n" //
-          + "</style>\n");
       setPreHighlight("");
       setPostHighlight("");
     }
@@ -105,6 +100,9 @@ public final class HTMLHighlighter {
     implementation.process(doc, is);
 
     String html = implementation.html.toString();
+
+    System.out.println(html);
+
     if (outputHighlightOnly) {
       Matcher m;
 
@@ -124,6 +122,8 @@ public final class HTMLHighlighter {
         }
       }
     }
+
+    System.out.println(html);
 
     return html;
   }
