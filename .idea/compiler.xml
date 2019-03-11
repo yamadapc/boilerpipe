@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="boilerpipe-common" />
+        <module name="boilerpipe-demo" />
+        <module name="nekohtml" />
+        <module name="nekohtml-relocated" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="boilerpipe-common" target="1.7" />
+      <module name="boilerpipe-demo" target="1.7" />
+      <module name="boilerpipe-parent" target="1.7" />
+      <module name="nekohtml" target="1.7" />
+      <module name="nekohtml-relocated" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
